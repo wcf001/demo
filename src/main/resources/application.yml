@@ -1,0 +1,30 @@
+server:
+  port: 9999
+
+
+roncoo:
+  secret: ${random.value}
+  number: ${random.int}
+  bignumber: ${random.long}
+  uuid: ${random.uuid}
+test: ${roncoo.secret}
+spring:
+  jackson:
+    date-format: "yyyy-MM-dd HH:mm:ss"
+  freemarker:
+    prefix:  classpath:/templates
+    allow-request-override: false
+    cache: true
+    charset: utf-8
+    content-type: text/html
+    suffix: .html
+  resources:
+    static-locations: classpath:/static/  #设置静态资源放到指定路径下
+  cache:
+    type: redis
+    #type: ehcache
+    #ehcache:
+      #config: classpath:ehcache.xml.
+
+logging:
+  config: classpath:logback.xml
