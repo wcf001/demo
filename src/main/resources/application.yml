@@ -19,7 +19,7 @@ spring:
     content-type: text/html
     suffix: .html
   resources:
-    static-locations: classpath:/static/  #设置静态资源放到指定路径下
+    static-locations: classpath:static/  #设置静态资源放到指定路径下
   cache:
     type: redis
   datasource:
