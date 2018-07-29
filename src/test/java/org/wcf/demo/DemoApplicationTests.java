@@ -1,10 +1,12 @@
 package org.wcf.demo;
 
+import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.wcf.demo.utils.SqlSessionFactoryUtils;
 
 import java.util.Properties;
 
@@ -34,6 +36,9 @@ public class DemoApplicationTests {
         }
     }
     @Test
-    public void test(){}
+    public void test(){
+        SqlSession sqlSession=null;
+        sqlSession=SqlSessionFactoryUtils.openSqlSession();
+    }
 
 }

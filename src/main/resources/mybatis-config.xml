@@ -8,7 +8,13 @@
             <transactionManager type="JDBC"></transactionManager>
             <!--JDBC使用jdbcTransactionFactory生成的jdbcTransaction对象实现
             MANAGED使用ManagedTransactionFactory生成的ManagedTransaction对象实现-->
-            <dataSource type=""></dataSource>
+            <dataSource type="POOLED">
+                <property name="url" value=""
+            </dataSource>
+            <!--unpooled采用非数据库池的管理方式-->
+            <!--pooled采用池的概念-->
+            <!--jndi实现集中或在外部配置数据源-->
+            <!--mybatis还支持第三方数据源-->
         </environment>
 
     </environments>
