@@ -4,4 +4,10 @@
     <select id="findRolesByMap" parameterType="map" resultType="role">
         select id,roleName,note from t_role where id=#{id}
     </select>
+    <insert id="ll" parameterType="role">
+        <selectKey keyProperty="id" resultType="long" order="BEFORE">
+            select if(max(id)=null,1,max(id)+3) from t_role
+        </selectKey>
+        insert into t_role(id,role_name,note) values (#(id),#(name),#{note})
+    </insert>
 </mapper>
